@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>chatty web client</title>
+        <link href="/client/style.css" rel="stylesheet"/>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/client/lib/jquery.js"></script>
+        <script src="/common/handlebars.js"></script>
+        <script src="/common/models.js"></script>
+        <script src="/client/code.js"></script>
+        <script id="message-template" type="text/x-handlebars-template">
+<li class='message {{type}}'>
+    ({{user.name}}): {{message}}
+</li>
+        </script>
+        <script id="userlist-template" type="text/x-handlebars-template">
+{{#each users}}
+<li>{{name}}</li>
+{{/each}}
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>chatty web client</h1>
+        </div>
+        <div id="main">
+            <form id="status-update-form" action="javascript:void(0);" novalidate="novalidate">
+                <div>
+                    <input type="text" required autofocus placeholder="type a message, hit return"/>
+                    <button type="button">leave the chatroom</button>
+                </div>
+            </form>
+            <div id="messages">
+                <h2>messages</h2>
+                <ul></ul>
+            </div>
+            <div id="users">
+                <h2>users</h2>
+                <ul></ul>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,140 @@
+/* Colors picked from: http://colorschemedesigner.com/#2V41Tk4jzxQq3 */
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+    color: #6394A1;
+    background-color: #0B323D;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+
+
+#header > h1 {
+    margin: 0;
+    padding: 0.2em;
+    text-align: right;
+
+    background-color: #0B323D;
+}
+
+
+
+#main {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    
+    background-color: black;
+}
+
+
+
+#status-update-form {
+    padding: 0.5em;    
+}
+#status-update-form input[type='text'] {
+    padding: 0.3em;
+    width: 50em;
+}
+#status-update-form input[type='text'] {
+    outline: none;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+#status-update-form input[type='text']:invalid {
+    border: 3px solid #9C473A;
+    /* for mozilla */
+    box-shadow: 0 0 0 transparent;
+}
+#status-update-form input[type='text']:valid {
+    border: 3px solid #2B7341;
+}
+#status-update-form button {
+    -webkit-appearance: none;
+    color: #6394A1;
+    background-color: #0B323D;
+    border: 0.2em solid #6394A1;
+    
+    border-radius: 0.1em;
+    padding: 0.5em;
+    text-align: center;
+}
+#status-update-form button:disabled {
+    color: #888;
+    border-color: #888;
+    background-color: black;
+}
+
+
+
+#messages {
+    width: 75%;
+    height: 100%;
+    float: left;
+    border-top: 3px solid #0B323D;
+}
+#messages > h2 {
+    margin: 0;
+    padding: 0.5em;
+
+    font-size: 1em;
+}
+#messages > ul {
+    margin: 0;
+    padding: 0 0.5em;
+    list-style: none;
+}
+.message {
+    font-family: "Courier New", Courier, monospace;
+}
+.message.chat {
+    color: #2B7341;
+}
+.message.echo {
+    color: #265461;
+}
+.message.info {
+    background-color: #2B7341;
+    color: black;
+    border-bottom: 1px solid black;
+}
+.message.error {
+    background-color: #9C473A;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+
+
+#users {
+    width: 25%;
+    height: 100%;
+    float: left;
+    border-top: 3px solid #0B323D;
+    border-left: 3px solid #0B323D;
+}
+#users > h2 {
+    margin: 0;
+    padding: 0.5em;
+
+    font-size: 1em;
+}
+#users > ul {
+    margin: 0;
+    padding: 0 0.5em;
+    list-style: none;
+    
+    font-family: "Courier New", Courier, monospace;
+}
