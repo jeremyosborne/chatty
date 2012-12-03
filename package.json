@@ -2,7 +2,7 @@
     "name": "Chatty",
     "version": "0.1.0",
     "description": "Chatty, a simple web chat room",
-    "keywords": ["OpenShift", "Node.js", "application", "socket.io", "MongoDB"],
+    "keywords": ["OpenShift", "Node.js", "application", "socket.io"],
     "homepage": "https://github.com/jeremyosborne/chatty",
     "author": {
         "name": "Jeremy Osborne",
