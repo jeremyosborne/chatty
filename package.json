@@ -1,6 +1,6 @@
 {
     "name": "Chatty",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "Chatty, a simple web chat room",
     "keywords": ["OpenShift", "Node.js", "application", "socket.io"],
     "homepage": "https://github.com/jeremyosborne/chatty",
@@ -19,11 +19,16 @@
     },
 
     "dependencies": {
+        "optimist": "0.3.x",
         "socket.io": "0.9.x",
         "express": "3.x"
     },
     "devDependencies": {},
     "bundleDependencies": [],
+
+    "scripts": { 
+        "start": "node server.js --no-websockets=true --log-level=1" 
+    },
 
     "private": true,
     "main": "server.js"

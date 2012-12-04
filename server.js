@@ -9,7 +9,8 @@ var app;
 var Handlebars = require('./common/handlebars').Handlebars;
 var Message = require('./common/models').Message;
 var User = require('./common/models').User;
-
+// Grab any arguments that are passed in.
+var argv = require('optimist').argv;
 
 
 // Setup a very simple express application.
@@ -82,6 +83,17 @@ var messages = {
 
 // socket.io augments our existing HTTP server instance.
 io = require('socket.io').listen(server);
+io.configure(function() {
+    // Logging: 3 = debug (default), 1 = warn
+    var logLevel = (argv["log-level"] === undefined) ? 3 : argv["log-level"];
+    io.set("log level", logLevel);
+
+    // Restrict the type of transports to just xhr polling.
+    if (argv['no-websockets']) {
+        io.set("transports", ["xhr-polling"]);        
+        io.set("polling duration", 30);
+    }
+});
 // Called on a new connection from the client. The socket object should be
 // referenced for future communication with an explicit client.
 io.sockets.on('connection', function (socket) {
