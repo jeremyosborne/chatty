@@ -1,8 +1,6 @@
 $(document).ready(function() {
     
     (function (exports) {
-        // What is the base URI for the socket?
-        var socketURI = '/';
         // We use socket.io as our bridge. It will sort out what sort of
         // connection we're going to use.
         var socket = io.connect(socketURI);

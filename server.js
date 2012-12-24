@@ -15,12 +15,20 @@ var argv = require('optimist').argv;
 
 // Setup a very simple express application.
 app = express();
+// How we pass our websocket URL to the client.
+app.use('/varSocketURI.js', function(req, res) {
+    var port = argv['websocket-port'];
+    // Modify the URI only if we pass an optional connection port in.
+    var socketURI = port ? ':'+port+'/' : '/';
+    res.set('Content-Type', 'text/javascript');
+    res.send('var socketURI="'+socketURI+'";');
+});
 // The client path is for client specific code.
 app.use('/client', express.static(__dirname + '/client'));
 // The common path is for shared code: used by both client and server.
 app.use('/common', express.static(__dirname + '/common'));
 // The root path should serve the client HTML.
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     res.sendfile(__dirname + '/client/index.html');
 });
 
@@ -87,12 +95,6 @@ io.configure(function() {
     // Logging: 3 = debug (default), 1 = warn
     var logLevel = (argv["log-level"] === undefined) ? 3 : argv["log-level"];
     io.set("log level", logLevel);
-
-    // Restrict the type of transports to just xhr polling.
-    if (argv['no-websockets']) {
-        io.set("transports", ["xhr-polling"]);        
-        io.set("polling duration", 30);
-    }
 });
 // Called on a new connection from the client. The socket object should be
 // referenced for future communication with an explicit client.
