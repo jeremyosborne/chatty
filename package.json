@@ -20,14 +20,14 @@
 
     "dependencies": {
         "optimist": "0.3.x",
-        "socket.io": "0.9.x",
+        "socket.io": "0.9.16",
         "express": "3.x"
     },
     "devDependencies": {},
     "bundleDependencies": [],
 
     "scripts": { 
-        "start": "node server.js --websocket-port=8000 --log-level=1" 
+        "start": "node server.js --log-level=1" 
     },
 
     "private": true,

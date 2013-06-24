@@ -2,6 +2,10 @@
 
 A very (very) simple chat server with web client interface.
 
+## RECENT EDIT for OpenShift Blog Readers
+
+I haven't (completely) abandoned this code, but you'd think I have with my lack of updates. If you are here due to the OpenShift blog article I did some time ago, thanks to a couple of readers I've fixed things up so this code works with the current iteration of OpenShift. The problems were minor and had to do with OpenShift supporting websockets natively (which is awesome) and some incompatibilities with node 0.10.
+
 ## Requirements
 
 * node.js (assumes 0.6.0 or greater)
