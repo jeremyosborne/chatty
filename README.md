@@ -18,7 +18,7 @@ If you are following along in the article, `node server` is what you want to use
 
 If you are going through the article I recommend that your final stop be the tips of the master branch, not the tags referenced in the article. In other words, if you want just the tips and you want them immediately:
 
-    rhc app create chatty nodejs-0.6
+    rhc app create chatty nodejs-0.10
     cd chatty
     git remote add -f chatty-upstream git://github.com/jeremyosborne/chatty.git
     git branch chatty-upstream chatty-upstream/master
