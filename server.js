@@ -15,6 +15,23 @@ var argv = require('optimist').argv;
 
 // Setup a very simple express application.
 app = express();
+// Allow cross origin requests.
+app.use(function(req, res, next) {
+    var origin = '*';
+    try {
+        var parts = req.headers.referer.split('/').filter(function(n){return n;});
+        if (parts.length >= 2){
+            origin = parts[0] + '//' + parts[1];
+        }
+    } catch (e) {
+        // no referrer
+    }
+
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+    next();
+});
 // How we pass our websocket URL to the client.
 app.use('/varSocketURI.js', function(req, res) {
     var port = argv['websocket-port'];
