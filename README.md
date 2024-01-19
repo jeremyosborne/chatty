@@ -1,8 +1,8 @@
 # chatty
 
+**This is very old. Please find and use newer examples either via web search or an LLM.**
+
 A very (very) simple chat server with web client interface.
-
-
 
 ## Errata for OpenShift blog readers
 
